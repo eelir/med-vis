@@ -1,0 +1,123 @@
+<html>
+	<head>
+		<title>Prototype</title>
+		<script src="d3.v3.min.js"></script>
+		<script type="text/javascript" src="spiralVis.js"></script>
+		<style>
+			/* tell the SVG path to be a thin blue line without any area fill */
+			svg {
+  				font: 10px sans-serif;
+			}
+			
+			p{font: 12px sans-serif;}
+			
+			path {
+				stroke-width: 1;
+				fill: none;
+			}
+			
+			.data1 {
+				
+				stroke: steelblue;
+			}
+
+			.data2 {
+				
+				stroke: orange;
+			}
+			
+			
+			.axis {
+			  shape-rendering: crispEdges;
+			}
+
+			.x.axis line {
+			  stroke: lightgrey;
+			}
+
+			.x.axis .minor {
+			  stroke-opacity: .5;
+			}
+
+			.x.axis path {
+			  display: none;
+			}
+			
+			.x.axis text {
+				font: 10px sans-serif;
+			}
+
+			.y.axis line, .y.axis path {
+			  fill: none;
+			  stroke: #000;
+			}
+
+			.y.axis text {
+				font: 10px sans-serif;
+			}
+			
+			.y.colormap {
+				font: 10px sans-serif;
+			}
+
+			.y.axisRight text {
+				fill: orange;
+			}
+			
+			.y.axisLeft text {
+				fill: steelblue;
+			}
+			
+			.brush .extent {
+  				stroke: #fff;
+  				fill-opacity: .125;
+  				shape-rendering: crispEdges;
+}
+		</style>
+	</head>
+	<body>
+
+
+	<div id="graph" class="aGraph"></div>
+
+
+	<script type="text/javascript">
+      renderVis("sp_dys.csv");
+	</script>
+	
+	
+
+</br>
+<p><span style="color: steelblue">Blue line</span> - drawing speed (distance over change in time).</p>
+<p><span style="color: orange">Orange line</span> - displacement around the ideal trajectory (change in radius).</p>
+<div id="control" class="aGraph">
+
+
+<button onclick="animate();">Animate</button>
+
+<p>Select different experiment:
+<select name="aa" onchange="reload(this.value)"> 
+<option value="sp_dys.csv">Dyskinectic 1</option>
+<option value="sp_dys2.csv">Dyskinectic 2</option>
+<option value="sp_dys3.csv">Dyskinectic 3</option>
+<option value="sp_dys4.csv">Dyskinectic 4</option>
+<option value="sp_dys5.csv">Dyskinectic 5</option>
+<option value="sp_dys6.csv">Dyskinectic 6</option>
+<option value="sp_off.csv">Off 1</option>
+<option value="sp_off2.csv">Off 2</option>
+<option value="sp_off3.csv">Off 3</option>
+<option value="sp_off4.csv">Off 4</option>
+<option value="sp_off5.csv">Off 5</option>
+<option value="sp_off6.csv">Off 6</option>
+<option value="sp_hel.csv">Healthy Elderly 1</option>
+<option value="sp_hel2.csv">Healthy Elderly 2</option>
+<option value="sp_hel3.csv">Healthy Elderly 3</option>
+<option value="sp_hel4.csv">Healthy Elderly 4</option>
+<option value="sp_hel5.csv">Healthy Elderly 5</option>
+<option value="sp_hel6.csv">Healthy Elderly 6</option>
+</select> </p>
+
+
+</div>
+	</body>
+</html>
